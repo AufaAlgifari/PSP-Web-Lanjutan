@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <!-- basic -->
       @include('home.homecss')
    </head>
    <body>
@@ -34,50 +33,16 @@
                      <div class="carousel-item active">
                         <div class="client_main">
                            <div class="box_left">
-                              <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia</p>
+                              <p class="lorem_text">Sangat Mantapp! AmbatuLombaStech Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore expedita qui dolores!</p>
                            </div>
                            <div class="box_right">
                               <div class="client_taital_left">
-                                 <div class="client_img"><img src="images/client-img.png"></div>
+                                 <div class="client_img"><img src="images/wlee.png"></div>
                                  <div class="quick_icon"><img src="images/quick-icon.png"></div>
                               </div>
                               <div class="client_taital_right">
-                                 <h4 class="client_name">Dame</h4>
-                                 <p class="customer_text">Customer</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="client_main">
-                           <div class="box_left">
-                              <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia</p>
-                           </div>
-                           <div class="box_right">
-                              <div class="client_taital_left">
-                                 <div class="client_img"><img src="images/client-img.png"></div>
-                                 <div class="quick_icon"><img src="images/quick-icon.png"></div>
-                              </div>
-                              <div class="client_taital_right">
-                                 <h4 class="client_name">Dame</h4>
-                                 <p class="customer_text">Customer</p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="client_main">
-                           <div class="box_left">
-                              <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia</p>
-                           </div>
-                           <div class="box_right">
-                              <div class="client_taital_left">
-                                 <div class="client_img"><img src="images/client-img.png"></div>
-                                 <div class="quick_icon"><img src="images/quick-icon.png"></div>
-                              </div>
-                              <div class="client_taital_right">
-                                 <h4 class="client_name">Dame</h4>
-                                 <p class="customer_text">Customer</p>
+                                 <h4 class="client_name">Farhan Hakim</h4>
+                                 <p class="customer_text">Game Developer</p>
                               </div>
                            </div>
                         </div>
@@ -103,10 +68,10 @@
             </div>
             <div class="social_icon">
                <ul>
-                  <li><a href="#"><img src="images/fb-icon.png"></a></li>
+                  <li><a href="https://web.facebook.com/algifari.algifari.56829446"><img src="images/fb-icon.png"></a></li>
                   <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-                  <li><a href="#"><img src="images/linkedin-icon.png"></a></li>
-                  <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+                  <li><a href="https://www.linkedin.com/in/aufa-salsabila-algifari-751a66279/"><img src="images/linkedin-icon.png"></a></li>
+                  <li><a href="https://www.instagram.com/aufa.algifari_/"><img src="images/instagram-icon.png"></a></li>
                </ul>
             </div>
          </div>

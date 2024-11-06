@@ -71,21 +71,16 @@ class AdminController extends Controller
         'post_status' => 'nullable|string|max:255'
     ]);
 
-    // Cek jika ada gambar baru yang diunggah
     if ($request->hasFile('image')) {
-        // Hapus gambar lama jika ada
         if ($post->image) {
             Storage::delete('public/' . $post->image);
         }
 
-        // Simpan gambar baru
         $validatedData['image'] = $request->file('image')->store('post-image', 'public');
     }
 
-    // Update data post dengan data yang sudah divalidasi
     $post->update($validatedData);
 
-    // Redirect setelah berhasil update
     return redirect('/home')->with('Success', 'Post Berhasil Diperbarui');
 }
 

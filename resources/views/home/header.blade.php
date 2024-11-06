@@ -27,12 +27,14 @@
        </nav>
     </div>
     <div class="container-fluid">
-       <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+      <div class="logo">
+         <a href="index.html">
+         </a>
+     </div>
+     
        <div class="menu_main">
           <ul>
-             <li class="active"><a href="index.html">Home</a></li>
-             <li><a href="about.html">About</a></li>
-             <li><a href="blog.html">Blog</a></li>
+             <li class="active"><a href="/">Home</a></li>
              @if (Route::has('login'))
              @auth
              <li><x-app-layout>

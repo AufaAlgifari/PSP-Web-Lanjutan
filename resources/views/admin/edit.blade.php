@@ -28,7 +28,6 @@
           <h1 class="post_title">Create Post</h1>
           <div class="container">
             <form action="{{ url('update_post/' . $post->id) }}" method="post" enctype="multipart/form-data">
-                @method('PUT') <!-- Menyatakan bahwa ini adalah request PUT -->
                 @csrf
                 <div class="form-group">
                     <label for="title">Post Title</label>
