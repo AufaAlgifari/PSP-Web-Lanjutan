@@ -6,17 +6,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         if (Auth::check()) { 
             $usertype = Auth::user()->usertype; 
     
             if ($usertype == 'user') {
                 return view('home.home');
             } else if ($usertype == 'admin') {
-                return view('admin.admin-home');
+                $posts = Post::all(); 
+                return view('admin.admin-home', compact('posts'));
             }
         }
         return redirect()->route('login');
@@ -33,24 +36,66 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Ensure it is an image file with size limit
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', 
             'name' => 'nullable|string|max:255',
             'user_id' => 'nullable|integer',
             'usertype' => 'nullable|string|max:255',
             'post_status' => 'nullable|string|max:255'
         ]);
-    
-        // Handle image upload
+
         if ($request->hasFile('image')) {
             $validatedData['image'] = $request->file('image')->store('post-image', 'public');
         }
     
         $validatedData['user_id'] = Auth::user()->id;
-    
-        // Create a new post using the validated data
+
         $store = Post::create($validatedData);
     
         return redirect('/home')->with('Success', 'Post Berhasil Dibuat');
+    }
+
+    public function edit(Post $post) {
+        return view('admin.edit', compact('post'));
+    }
+
+    public function update_post(Request $request, Post $post)
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'name' => 'nullable|string|max:255',
+        'user_id' => 'nullable|integer',
+        'usertype' => 'nullable|string|max:255',
+        'post_status' => 'nullable|string|max:255'
+    ]);
+
+    // Cek jika ada gambar baru yang diunggah
+    if ($request->hasFile('image')) {
+        // Hapus gambar lama jika ada
+        if ($post->image) {
+            Storage::delete('public/' . $post->image);
+        }
+
+        // Simpan gambar baru
+        $validatedData['image'] = $request->file('image')->store('post-image', 'public');
+    }
+
+    // Update data post dengan data yang sudah divalidasi
+    $post->update($validatedData);
+
+    // Redirect setelah berhasil update
+    return redirect('/home')->with('Success', 'Post Berhasil Diperbarui');
+}
+
+    
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+    
+        return redirect('/home')->with('Success', 'Post Berhasil Dihapus');
     }
     
     
